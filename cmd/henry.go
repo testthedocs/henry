@@ -17,7 +17,7 @@ package cmd
 import (
 	"fmt"
 	"os"
-	
+
         "github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -32,12 +32,11 @@ var (
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
 	Use:   "henry",
-	Short: "Plone Documentation Builder",
-	Long: `A tool for running test builds of docs.plone.org.
-You can use this application to build HTML in debug or default mode.
+	Short: "Documentation Builder",
+	Long: `Creating test builds of Sphinx based documentation.
 
-Debug: Generates warnings for all missing references and the build stops at the first warning.
-Default: Builds HTML without any tests.`,
+Default: Builds HTML without any tests.
+Debug: Generates warnings for all missing references and the build stops at the first warning.`,
 // Uncomment the following line if your bare application
 // has an action associated with it:
 //	Run: func(cmd *cobra.Command, args []string) { },
@@ -61,7 +60,7 @@ func init() {
 	// Cobra supports Persistent Flags, which, if defined here,
 	// will be global for your application.
 
-	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cli.yaml)")
+	//RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.cli.yaml)")
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	RootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")

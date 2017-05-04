@@ -45,12 +45,12 @@ func buildHTML() {
 		//silenceMode = true
 		//c.watchConfig()
 		//fmt.Println("Hiding output")
-		cmdStr := "docker run -v `pwd`/docs:/build/docs testthedocs/plone-docsbuilder html-quiet"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder html-quiet"
 		exec.Command("/bin/sh", "-c", cmdStr).Output()
 	} else {
 		color.Yellow("Building HTML")
 		fmt.Println("Hold on, this will take some seconds")
-		cmdStr := "docker run -v `pwd`/docs:/build/docs testthedocs/plone-docsbuilder html"
+                cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder html"
 		out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
 		//exec.Command("/bin/sh", "-c", cmdStr).Output()
 		fmt.Printf("%s", out)
@@ -69,7 +69,7 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// buildCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	buildCmd.Flags().BoolVarP(&silenceMode, "silence", "s", false, "Hides terminal output")
+	buildCmd.Flags().BoolVarP(&silenceMode, "silence", "s", false, "hides terminal output")
 
 	if silenceMode {
 		//silenceMode = true
