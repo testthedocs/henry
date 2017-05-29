@@ -18,8 +18,6 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/fatih/color"
-
 	"github.com/spf13/cobra"
 )
 
@@ -31,8 +29,7 @@ var debugCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) {
 		// TODO: Work your own magic here
-		color.Yellow("Building in debug mode")
-		fmt.Println("Hold on, this will take some seconds")
+		fmt.Println("Building in debug mode")
 		buildDebug()
 
 	},

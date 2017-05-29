@@ -18,7 +18,6 @@ import (
 	"fmt"
 	"os/exec"
 
-	"github.com/fatih/color"
 	"github.com/spf13/cobra"
 )
 
@@ -32,10 +31,6 @@ var buildCmd = &cobra.Command{
 	Short: "Builds HTML",
 	Long:  `Builds the docs in HTML, ignoring warnings about reST syntax.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		// TODO: Work your own magic here
-		//fmt.Println("Building HTML")
-		//color.Yellow("Building HTML")
-		//fmt.Println("Hold on, this will take some seconds")
 		buildHTML()
 	},
 }
