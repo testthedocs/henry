@@ -23,6 +23,6 @@ help: ## This help message
 .PHONY: test-release
 test-release: ## Builds binary packages for testing
 	@echo ""
-	@echo "$(YELLOW)==> Creating Binaries, please wait  ....$(RESET)"
+	@echo "$(YELLOW)==> Creating Binaries for version $(VERSION), please wait ....$(RESET)"
 	@if [ -d pkg ]; then rm -rf pkg; fi;
 	@gox -output "pkg/{{.Dir}}_{{.OS}}_{{.Arch}}_$(VERSION)"
