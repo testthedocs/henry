@@ -33,10 +33,12 @@ var (
 var RootCmd = &cobra.Command{
 	Use:   "henry",
 	Short: "Documentation Builder",
-	Long: `Creating test builds of Sphinx based documentation.
+	Long: `A wrapper around Sphinx for creating test builds of reST written documentation.
 
-Default: Builds HTML without any tests.
-Debug: Generates warnings for all missing references and the build stops at the first warning.`,
+        Options aka flags:
+        debug: generates warnings for all missing references and the build stops at the first warning.
+        serve: builds html and starts a 'watch' mode, the docs will be rebuild by every change.
+        version: shows the version,`
 // Uncomment the following line if your bare application
 // has an action associated with it:
 //	Run: func(cmd *cobra.Command, args []string) { },
