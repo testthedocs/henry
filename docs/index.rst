@@ -38,4 +38,4 @@ According to the docs of your project, you have to download and install Sphinx i
 
 Say hello to henry, henry is here to help you, you do not have to care about all this, henry is doing that for !
 
-Since henry uses `Docker <https://www.docker.com/>`_, you also do not have to mess with your system or waste time on complicated setups.
+Since henry uses `Docker <https://www.docker.com/>`_, you do not have to mess with your system or waste time on complicated setups.
