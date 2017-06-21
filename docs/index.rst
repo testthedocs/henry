@@ -2,6 +2,15 @@
 henry
 =====
 
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   usage
+   development/index
+   release
+   release-notes
+
 About
 =====
 
@@ -30,9 +39,3 @@ According to the docs of your project, you have to download and install Sphinx i
 Say hello to henry, henry is here to help you, you do not have to care about all this, henry is doing that for !
 
 Since henry uses `Docker <https://www.docker.com/>`_, you also do not have to mess with your system or waste time on complicated setups.
-
-After the installation of henry, you can review your docs in build HTML with **one** short command:
-
-.. code-block:: shell
-
-   henry html
