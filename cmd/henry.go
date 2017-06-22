@@ -18,16 +18,16 @@ import (
 	"fmt"
 	"os"
 
-        "github.com/spf13/cobra"
+	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
 
 var cfgFile string
 
 var (
-        // VERSION is set during build
-            VERSION string
-        )
+	// VERSION is set during build
+	VERSION string
+)
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
@@ -38,16 +38,16 @@ var RootCmd = &cobra.Command{
         Options aka flags:
         debug: generates warnings for all missing references and the build stops at the first warning.
         serve: builds html and starts a 'watch' mode, the docs will be rebuild by every change.
-        version: shows the version,`
-// Uncomment the following line if your bare application
-// has an action associated with it:
-//	Run: func(cmd *cobra.Command, args []string) { },
+        version: shows the version`,
+	// Uncomment the following line if your bare application
+	// has an action associated with it:
+	//	Run: func(cmd *cobra.Command, args []string) { },
 }
 
 // Execute adds all child commands to the root command sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute(version string) {
-        VERSION = version
+	VERSION = version
 
 	if err := RootCmd.Execute(); err != nil {
 		fmt.Println(err)
@@ -74,7 +74,7 @@ func initConfig() {
 		viper.SetConfigFile(cfgFile)
 	}
 
-	viper.SetConfigName(".cli") // name of config file (without extension)
+	viper.SetConfigName(".cli")            // name of config file (without extension)
 	viper.AddConfigPath(os.Getenv("HOME")) // adding home directory as first search path
 	viper.AutomaticEnv()                   // read in environment variables that match
 

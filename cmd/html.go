@@ -45,7 +45,7 @@ func buildHTML() {
 	} else {
 		fmt.Println("Building HTML")
 		fmt.Println("Hold on, this will take some seconds")
-                cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder html"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder html"
 		out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
 		//exec.Command("/bin/sh", "-c", cmdStr).Output()
 		fmt.Printf("%s", out)

@@ -15,11 +15,10 @@ package cmd
 
 import (
 	"os"
-    "os/exec"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
-
 
 // serveCmd represents the serve command
 var serveCmd = &cobra.Command{
@@ -33,7 +32,6 @@ var serveCmd = &cobra.Command{
 		serveHTML()
 	},
 }
-
 
 func serveHTML() {
 	cmdStr := "docker run -it --net=host -v `pwd`:/build/docs pdbab serve"
