@@ -17,9 +17,9 @@ package main
 import "github.com/testthedocs/henry/cmd"
 
 var (
-        // VERSION is set during build
-            VERSION = "0.0.1-alpha.1"
-        )
+	// VERSION is set during build
+	VERSION = "0.0.1-alpha.1"
+)
 
 func main() {
 	cmd.Execute(VERSION)
