@@ -1,0 +1,35 @@
+release:
+  github:
+    owner: testthedocs
+    name: henry
+brew:
+  github: {}
+  install: bin.install "henry"
+build:
+  goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+  - "386"
+  goarm:
+  - "6"
+  main: .
+  ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
+  binary: henry
+  hooks: {}
+archive:
+  format: tar.gz
+  replacements:
+    darwin: macOS
+  name_template: '{{ .Binary }}_{{.Version}}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{
+    .Arm }}{{ end }}'
+  files:
+  - LICENSE*
+  - readme*
+  - README*
+  - CHANGES*
+fpm: {}
+snapshot:
+  name_template: SNAPSHOT-{{ .Commit }}
