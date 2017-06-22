@@ -34,7 +34,7 @@ var serveCmd = &cobra.Command{
 }
 
 func serveHTML() {
-	cmdStr := "docker run -it --net=host -v `pwd`:/build/docs pdbab serve"
+	cmdStr := "docker run -it --net=host -v `pwd`:/build/docs testthedocs/plone-docsbuilder serve"
 	cmd := exec.Command("bash", "-c", cmdStr)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
