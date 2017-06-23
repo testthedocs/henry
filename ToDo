@@ -1,0 +1,6 @@
+- cleanup makefile
+- fix gox or switch entire to goreleaser, we could use gorelease snapshot for test builds
+- update docs
+- check if we reallt want "docker rm" since this will download the image everytime, better create 'henry update'
+- add tests
+- depoly docs to rtd
