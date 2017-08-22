@@ -15,6 +15,7 @@ package cmd
 
 import (
 	"fmt"
+        "os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -22,17 +23,23 @@ import (
 // debugCmd represents the debug command
 var debugCmd = &cobra.Command{
 	Use:   "debug",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Builds HTML in nitpicky mode",
+	Long: `Generates errors for all missing references and will stop on first error`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("debug called")
+		//fmt.Println("debug called")
+                debugHTML()
 	},
 }
+
+func debugHTML(){
+	fmt.Println("Building HTML in debug mode")
+                fmt.Println("Hold on, this will take some seconds")
+                cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder testbuild"
+                out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
+                //exec.Command("/bin/sh", "-c", cmdStr).Output()
+                fmt.Printf("%s", out)
+        }
+
 
 func init() {
 	RootCmd.AddCommand(debugCmd)

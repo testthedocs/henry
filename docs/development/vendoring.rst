@@ -14,3 +14,10 @@ History
    govendor install +local
 
 All of this in the */root* of the repo
+
+Update All Packages
+===================
+
+.. code-block:: console
+
+govendor update +v

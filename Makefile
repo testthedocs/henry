@@ -28,3 +28,7 @@ test-release: ## Builds binary packages for testing
 	@echo "$(YELLOW)==> Creating binaries for version $(VERSION), please wait ....$(RESET)"
 	@if [ -d pkg ]; then rm -rf pkg; fi;
 	@gox -output "pkg/{{.Dir}}_{{.OS}}_{{.Arch}}"
+
+.PHONY: update-vendor
+update-vendor: ## Updates all vendor packages
+	@govendor update +v
