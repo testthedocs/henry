@@ -3,6 +3,9 @@ SHELL := /bin/bash
 
 VERSION := $(shell cat VERSION)
 
+BIN_DIR := $(GOPATH)/bin
+GOMETALINTER := $(BIN_DIR)/gometalinter
+
 # Dependencies:
 # - https://github.com/mitchellh/gox
 
@@ -32,3 +35,11 @@ test-release: ## Builds binary packages for testing
 .PHONY: update-vendor
 update-vendor: ## Updates all vendor packages
 	@govendor update +v
+
+$(GOMETALINTER):
+	go get -u github.com/alecthomas/gometalinter
+	gometalinter --install &> /dev/null
+
+.PHONY: lint
+lint: $(GOMETALINTER)
+	gometalinter ./... --vendor
