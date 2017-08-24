@@ -15,7 +15,8 @@ package cmd
 
 import (
 	"fmt"
-        "os/exec"
+	"os"
+	"os/exec"
 
 	"github.com/spf13/cobra"
 )
@@ -24,22 +25,26 @@ import (
 var debugCmd = &cobra.Command{
 	Use:   "debug",
 	Short: "Builds HTML in nitpicky mode",
-	Long: `Generates errors for all missing references and will stop on first error`,
+	Long:  `Generates errors for all missing references and will stop on first error`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//fmt.Println("debug called")
-                debugHTML()
+		debugHTML()
 	},
 }
 
-func debugHTML(){
+func debugHTML() {
 	fmt.Println("Building HTML in debug mode")
-                fmt.Println("Hold on, this will take some seconds")
-                cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder testbuild"
-                out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
-                //exec.Command("/bin/sh", "-c", cmdStr).Output()
-                fmt.Printf("%s", out)
-        }
-
+	fmt.Println("Hold on, this will take some seconds")
+	cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug"
+	cmd := exec.Command("bash", "-c", cmdStr)
+	cmd.Stdout = os.Stdout
+	cmd.Stdin = os.Stdin
+	cmd.Stderr = os.Stderr
+	cmd.Run()
+	//out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
+	//exec.Command("/bin/sh", "-c", cmdStr).Output()
+	//fmt.Printf("%s", out)
+}
 
 func init() {
 	RootCmd.AddCommand(debugCmd)
