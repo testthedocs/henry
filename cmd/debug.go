@@ -21,6 +21,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	strictMode bool
+)
+
 // debugCmd represents the debug command
 var debugCmd = &cobra.Command{
 	Use:   "debug",
@@ -33,19 +37,29 @@ var debugCmd = &cobra.Command{
 }
 
 func debugHTML() {
-	fmt.Println("Building HTML in debug mode")
-	fmt.Println("Hold on, this will take some seconds")
-	cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug"
-	cmd := exec.Command("bash", "-c", cmdStr)
-	cmd.Stdout = os.Stdout
-	cmd.Stdin = os.Stdin
-	cmd.Stderr = os.Stderr
-	cmd.Run()
-	//out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
-	//exec.Command("/bin/sh", "-c", cmdStr).Output()
-	//fmt.Printf("%s", out)
+	if strictMode {
+		fmt.Println("Run Debug in strict mode")
+		fmt.Println("Hold on, this will take some seconds")
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug-strict"
+		cmd := exec.Command("bash", "-c", cmdStr)
+		cmd.Stdout = os.Stdout
+		cmd.Stdin = os.Stdin
+		cmd.Stderr = os.Stderr
+		cmd.Run()
+	} else {
+		fmt.Println("Building HTML in debug mode")
+		fmt.Println("Hold on, this will take some seconds")
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug"
+		cmd := exec.Command("bash", "-c", cmdStr)
+		cmd.Stdout = os.Stdout
+		cmd.Stdin = os.Stdin
+		cmd.Stderr = os.Stderr
+		cmd.Run()
+		//out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
+		//exec.Command("/bin/sh", "-c", cmdStr).Output()
+		//fmt.Printf("%s", out)
+	}
 }
-
 func init() {
 	RootCmd.AddCommand(debugCmd)
 
@@ -57,5 +71,9 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	// debugCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+	debugCmd.Flags().BoolVarP(&strictMode, "strict", "s", false, "test strict")
+
+	if strictMode {
+		fmt.Println("STRICT")
+	}
 }
