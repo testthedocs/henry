@@ -1,10 +1,11 @@
-=====
-henry
-=====
+===================================
+Henry - Documentation - Test Builds
+===================================
 
 .. toctree::
    :maxdepth: 2
    :hidden:
+   :caption: Henry
 
    usage
    development/index
