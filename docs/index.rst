@@ -2,41 +2,55 @@
 Henry - Documentation - Test Builds
 ===================================
 
+A wrapper written in `Golang <https://golang.org/>`_ around `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ and `Docker <https://www.docker.com/>`_.
+
+.. sidebar:: Overview
+
+   :Version: 0.0.1-alpha.2
+   :Status: Work In Progress
+   :Release: No stable release, yet
+   :Dependencies: `Docker <https://www.docker.com/>`_
+
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Henry
 
+   about
    usage
-   development/index
-   release
    release-notes
 
-About
-=====
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: Contributing
 
-The main idea behind henry is to make it a bit more pleasant and maybe less hard to install `Sphinx <http://www.sphinx-doc.org/en/stable/>`_.
+   development/index
 
-Installing `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ can be overwhelming, especially if you do not use it all the time.
 
-You need to install Python, figure out the whole *virtualenv* thing and such stuff.
+If you don't want to deal with installing `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ over and over again ....
 
-Imagine you are a new contributor to a open source project and you worked hard on a piece of *reST* based documentation.
+No messing with virtualenv, pip, etc.
 
-You followed the style-guide and you checked for typos, grammatic, tone, wording and so on, you even used the *reST* preview mode of your editor to get a first impression of how it looks.
+Henry can help you getting a quick visual how your docs will look like.
 
-**AWESOME !**
+Features
+========
+Currently:
 
-But, well before you finally create the *pull request* you want to make sure that it will look **OK** if you build is as HTML with the theme of your documentation.
+- Builds HTML (default)
+- Builds HTML in debug mode (reST checks)
 
-Maybe you will have to change some headers or add a line break or do something else.
 
-According to the docs of your project, you have to download and install Sphinx into a *virtualenv*, you have to make sure to use the right versions, you need python and so on. **HELP!!??**
 
-"I am not a developer, I work with CSS, all I wanted to do was to improve the docs part about theming" you may think.
+.. note::
 
-**You are right !**
+   Henry is written for the `Plone documentation project <https://docs.plone.org>`_.
 
-Say hello to henry, henry is here to help you, you do not have to care about all this, henry is doing that for !
+   Currently there is no 'easy' way to use your own theme or add-ons !
 
-Since henry uses `Docker <https://www.docker.com/>`_, you do not have to mess with your system or waste time on complicated setups.
+   This **will** change in the future !!
+
+.. todo::
+
+   Add gif here

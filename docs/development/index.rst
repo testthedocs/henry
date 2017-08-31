@@ -11,6 +11,7 @@ Development
    :hidden:
 
    vendoring
+   release
 
 Internals
 =========
