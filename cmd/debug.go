@@ -28,8 +28,8 @@ var (
 // debugCmd represents the debug command
 var debugCmd = &cobra.Command{
 	Use:   "debug",
-	Short: "Builds HTML in nitpicky mode",
-	Long:  `Generates errors for all missing references and will stop on first error`,
+	Short: "Builds HTML in debug mode",
+	Long:  `Shows reST errors and warnings`,
 	Run: func(cmd *cobra.Command, args []string) {
 		//fmt.Println("debug called")
 		debugHTML()
@@ -40,7 +40,7 @@ func debugHTML() {
 	if strictMode {
 		fmt.Println("Run Debug in strict mode")
 		fmt.Println("Hold on, this will take some seconds")
-		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug-strict"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder debug-strict"
 		cmd := exec.Command("bash", "-c", cmdStr)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
@@ -49,7 +49,7 @@ func debugHTML() {
 	} else {
 		fmt.Println("Building HTML in debug mode")
 		fmt.Println("Hold on, this will take some seconds")
-		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder:0.0.4 debug"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder debug"
 		cmd := exec.Command("bash", "-c", cmdStr)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
@@ -74,6 +74,6 @@ func init() {
 	debugCmd.Flags().BoolVarP(&strictMode, "strict", "s", false, "test strict")
 
 	if strictMode {
-		fmt.Println("STRICT")
+		fmt.Println("strict")
 	}
 }

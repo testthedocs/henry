@@ -35,8 +35,8 @@ var RootCmd = &cobra.Command{
 	Short: "Documentation Builder",
 	Long: `A wrapper around Sphinx for creating test builds of reST written documentation.
 
-        Options aka flags:
-        debug: generates warnings for all missing references and the build stops at the first warning.
+        Options and flags:
+        debug: builds html in debug mode, this will show warnings and erros.
         serve: builds html and starts a 'watch' mode, the docs will be rebuild by every change.
         version: shows the version`,
 	// Uncomment the following line if your bare application

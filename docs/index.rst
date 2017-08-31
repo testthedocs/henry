@@ -36,7 +36,6 @@ Henry can help you getting a quick visual how your docs will look like.
 
 Features
 ========
-Currently:
 
 - Builds HTML (default)
 - Builds HTML in debug mode (reST checks)
@@ -45,12 +44,26 @@ Currently:
 
 .. note::
 
-   Henry is written for the `Plone documentation project <https://docs.plone.org>`_.
+   Henry evolved out of the `Plone documentation project <https://docs.plone.org>`_.
 
-   Currently there is no 'easy' way to use your own theme or add-ons !
+   For the moment there is no 'easy' way to use your own theme or add-ons !
 
    This **will** change in the future !!
 
-.. todo::
+Examples
+========
 
-   Add gif here
+Command line
+
+.. image:: _static/henry-help.gif
+   :alt: Henry Command line help
+
+HTML Mode
+
+.. image:: _static/henry-html.gif
+   :alt: Henry HTML build mode
+
+Debug Mode
+
+.. image:: _static/henry-debug.gif
+   :alt: Henry debug mode
