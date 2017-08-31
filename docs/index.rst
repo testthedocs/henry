@@ -8,7 +8,7 @@ A wrapper written in `Golang <https://golang.org/>`_ around `Sphinx <http://www.
 
    :Version: 0.0.2-alpha
    :Status: Work In Progress
-   :Release: No stable release, yet
+   :Release: Pre-release on GitHub
    :Dependencies: `Docker <https://www.docker.com/>`_
 
 .. toctree::
