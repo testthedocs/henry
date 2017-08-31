@@ -6,7 +6,7 @@ A wrapper written in `Golang <https://golang.org/>`_ around `Sphinx <http://www.
 
 .. sidebar:: Overview
 
-   :Version: 0.0.1-alpha.2
+   :Version: 0.0.2-alpha
    :Status: Work In Progress
    :Release: No stable release, yet
    :Dependencies: `Docker <https://www.docker.com/>`_
