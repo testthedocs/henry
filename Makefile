@@ -27,7 +27,7 @@ help: ## This help message
 test-release: ## Builds binary packages for testing
 	@echo ""
 	@echo "$(YELLOW)==> Running fmt locally ...$(RESET)"
-	@govendor fmt +local
+	go fmt
 	@echo "$(YELLOW)==> Creating binaries for version $(VERSION), please wait ....$(RESET)"
 	@if [ -d pkg ]; then rm -rf pkg; fi;
 	@gox -output "pkg/{{.Dir}}_{{.OS}}_{{.Arch}}"
