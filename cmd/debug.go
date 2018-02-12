@@ -40,7 +40,7 @@ func debugHTML() {
 	if strictMode {
 		fmt.Println("Run Debug in strict mode")
 		fmt.Println("Hold on, this will take some seconds")
-		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder debug-strict"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/ttd-sphinx debug-strict"
 		cmd := exec.Command("bash", "-c", cmdStr)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
@@ -49,7 +49,7 @@ func debugHTML() {
 	} else {
 		fmt.Println("Building HTML in debug mode")
 		fmt.Println("Hold on, this will take some seconds")
-		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/plone-docsbuilder debug"
+		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/ttd-sphinx debug"
 		cmd := exec.Command("bash", "-c", cmdStr)
 		cmd.Stdout = os.Stdout
 		cmd.Stdin = os.Stdin
