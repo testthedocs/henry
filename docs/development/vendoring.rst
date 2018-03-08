@@ -12,10 +12,10 @@ Dep
 More info about `dep <https://golang.github.io/dep/>`_.
 
 
-Below are the old docs about ``govendor``.
+Below are the **old** docs about ``govendor``.
 
 Govendor
-=======
+========
 
 Use: `govendor <https://github.com/kardianos/govendor>`_.
 
