@@ -39,14 +39,14 @@ Features
 
 - Builds HTML (default)
 - Builds HTML in debug mode (reST checks)
-
+- Checks if you have a own *conf.py*, if so this one will be used.
 
 
 .. note::
 
    Henry evolved out of the `Plone documentation project <https://docs.plone.org>`_.
 
-   For the moment there is no 'easy' way to use your own theme or add-ons !
+   For the moment there is no 'easy' way to use your own add-ons !
 
    This **will** change in the future !!
 
