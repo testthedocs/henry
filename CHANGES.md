@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.4-alhpa
+
+- Use go 1.10 [svx]
+- Use ttd.sphinx [svx]
+
 ## 0.0.1-alpha.2-dev
 
 - Add debug mode [svx]

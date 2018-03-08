@@ -40,7 +40,7 @@ func buildHTML() {
 		//silenceMode = true
 		//c.watchConfig()
 		//fmt.Println("Hiding output")
-		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/ttd-sphinx html-quiet"
+		cmdStr := "docker run -it -v `pwd`:/build/docs testthedocs/ttd-sphinx html-quiet"
 		exec.Command("/bin/sh", "-c", cmdStr).Output()
 	} else {
 		fmt.Println("Building HTML")

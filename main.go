@@ -18,7 +18,7 @@ import "github.com/testthedocs/henry/cmd"
 
 var (
 	// VERSION is set during build
-	VERSION = "0.0.3-alpha"
+	VERSION = "0.0.4-alpha"
 )
 
 func main() {
