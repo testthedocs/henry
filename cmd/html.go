@@ -43,8 +43,8 @@ func buildHTML() {
 		cmdStr := "docker run -it -v `pwd`:/build/docs testthedocs/ttd-sphinx html-quiet"
 		exec.Command("/bin/sh", "-c", cmdStr).Output()
 	} else {
-		fmt.Println("Building HTML")
-		fmt.Println("Hold on, this will take some seconds")
+		//fmt.Println("Building HTML")
+		//fmt.Println("Hold on, this will take some seconds")
 		cmdStr := "docker run -v `pwd`:/build/docs testthedocs/ttd-sphinx html"
 		out, _ := exec.Command("/bin/sh", "-c", cmdStr).Output()
 		//exec.Command("/bin/sh", "-c", cmdStr).Output()

@@ -26,16 +26,16 @@ var serveCmd = &cobra.Command{
 	Short: "Serves documentation and rebuild if a change is detected",
 	Long: `Browse docs locally and rebuild automatically is a change it detected.
 
-	Note: This is currently alpha status and only tested on Linux.
-	Because if the usage of "net=host" this is considerd insecure!`,
+	Note: This is currently alpha status and only tested on Linux.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		serveHTML()
 	},
 }
 
 func serveHTML() {
-	cmdStr := "docker run -it --net=host -v `pwd`:/build/docs testthedocs/ttd-sphinx serve"
-	cmd := exec.Command("bash", "-c", cmdStr)
+	//cmdStr := "docker run -it --net=host -v `pwd`:/build/docs testthedocs/ttd-sphinx serve"
+	cmdStr := "docker run -it --name ttd-sphinx-serve -p 8000:8000 -v `pwd`:/build/docs testthedocs/ttd-sphinx serve"
+        cmd := exec.Command("bash", "-c", cmdStr)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
 	cmd.Stderr = os.Stderr
