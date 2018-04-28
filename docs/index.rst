@@ -28,7 +28,7 @@ A wrapper written in `Golang <https://golang.org/>`_ around `Sphinx <http://www.
    development/index
 
 
-If you don't want to deal with installing `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ over and over again ....
+"If you don't want to deal with installing `Sphinx <http://www.sphinx-doc.org/en/stable/>`_ over and over again ...."
 
 No messing with virtualenv, pip, etc.
 
