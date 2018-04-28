@@ -33,7 +33,7 @@ body {
 }
 
 a {
-    color: #83C152;
+    color: #00848a;
     text-decoration: none;
     cursor: pointer;
 }
@@ -67,7 +67,7 @@ a:hover {
 }
 
 .wy-menu-vertical a:hover {
-    background-color: #f03c69;
+    background-color: #008484;
     cursor: pointer;
 }
 

@@ -101,7 +101,8 @@ html_static_path = ['_static']
 html_logo = '_static/henry-logo.svg'
 html_title = 'Henry'
 html_show_sourcelink = False
-
+# Favicon
+html_favicon = '_static/favicon.png'
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
