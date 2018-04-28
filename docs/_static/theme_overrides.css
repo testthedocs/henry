@@ -15,7 +15,7 @@
 body {
     font-family: hack;
     font-weight: normal;
-    color: #222222;
+    color: #000000;
 }
 
 .wy-side-nav-search > div.version {
@@ -99,6 +99,7 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
     color: #555;
     white-space: nowrap;
     font-family: Roboto;
+    color: #000000;
 }
 
 .wy-menu a:hover {
