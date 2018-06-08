@@ -27,11 +27,13 @@ var versionCmd = &cobra.Command{
 	Long:  `Prints the version of henry.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println(RootCmd.Use + " " + VERSION)
+
 	},
 }
 
 func init() {
 	RootCmd.AddCommand(versionCmd)
+
 
 	// Here you will define your flags and configuration settings.
 
